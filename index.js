@@ -20,7 +20,9 @@ class Formatter {
         return capitalizedWord;
       }
     }
-    let titleizedArray = sentenceArray.map(capitalizeFirstWord);
+    let titleizedArray = []
+    titleizedArray.push(Formatter.capitalize(sentenceArray[0]));
+    titleizedArray.push(...sentenceArray.slice(1).map(capitalizeFirstWord));
     let titlizedSentence = titleizedArray.join(" ");
     return titlizedSentence;
   }
